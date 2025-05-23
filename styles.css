@@ -36,9 +36,9 @@ nav li {
 
 nav a {
     text-decoration: none;  /* removes underline */
-    color: inherit;         /* keeps text color consistent with surrounding */
+    color: #2C442D;         /* keeps text color consistent with surrounding */
 }
 
 a {
-    color: #7b629c;
+    color: #2C442D;
 }
