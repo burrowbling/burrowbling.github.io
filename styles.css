@@ -68,6 +68,7 @@ a {
 
 img {
   max-width: 100%;   /* never overflow the page */
+    width: 400px;
   height: auto;      /* keep proportions */
   display: block;    /* removes weird spacing */
   margin: 1rem 0;    /* space above/below */
