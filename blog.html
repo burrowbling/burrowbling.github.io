@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Blog - Samantha Toeman</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMANTHA TOEMAN</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
 </head>
-<body>
-  <header>
-    <h1>Blog</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">home</a></li>
-        <li><a href="work.html">work</a></li>
-        <li><a href="blog.html">blog</a></li>
-        <li><a href="contact.html">contact</a></li>
-      </ul>
-    </nav>
-  </header>
+
+ <script>
+function showSectionFromHash() {
+  const hash = window.location.hash.substring(1); // e.g. "blog"
+  const sections = document.querySelectorAll("section");
+
+  // Hide everything
+  sections.forEach(sec => sec.classList.remove("active"));
+
+  // If hash matches a section ID, show it, otherwise show "about"
+  if (hash) {
+    const target = document.getElementById(hash);
+    if (target) target.classList.add("active");
+  } else {
+    document.getElementById("about").classList.add("active");
+  }
+}
+
+// Run when page loads
+window.addEventListener("load", showSectionFromHash);
+
+// Run whenever the hash changes (when you click a nav link or paste a URL)
+window.addEventListener("hashchange", showSectionFromHash);
+</script>
+
+  <nav>
+    <ul>
+        <li><a href="index.html">BACK</a></li>
+    </ul>
+</nav>
+    
+ <h1><header>SAMANTHA TOEMAN'S WRITING</header></h1>
 
   <main>
    <ul>
