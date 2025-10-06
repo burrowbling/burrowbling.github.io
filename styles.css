@@ -50,4 +50,12 @@ a {
     color: #2C442D;
 }
 
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
 
