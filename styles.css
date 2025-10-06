@@ -50,10 +50,4 @@ a {
     color: #2C442D;
 }
 
-section {
-  display: none; /* hide everything */
-}
 
-section.active {
-  display: block; /* only show the active section */
-}
