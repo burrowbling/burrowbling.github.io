@@ -6,26 +6,52 @@
     <title>SAMANTHA TOEMAN</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
 </head>
+
+ <script>
+function showSectionFromHash() {
+  const hash = window.location.hash.substring(1); // e.g. "blog"
+  const sections = document.querySelectorAll("section");
+
+  // Hide everything
+  sections.forEach(sec => sec.classList.remove("active"));
+
+  // If hash matches a section ID, show it, otherwise show "about"
+  if (hash) {
+    const target = document.getElementById(hash);
+    if (target) target.classList.add("active");
+  } else {
+    document.getElementById("about").classList.add("active");
+  }
+}
+
+// Run when page loads
+window.addEventListener("load", showSectionFromHash);
+
+// Run whenever the hash changes (when you click a nav link or paste a URL)
+window.addEventListener("hashchange", showSectionFromHash);
+</script>
+
 <body>
     <header>
         <h1>SAMANTHA TOEMAN</h1>
         <p> Rhode Island School Of Design 2029 </p>
     </header>
 
+
+    
+  <nav>
+    <ul>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="work.html">HER WORK</a></li>
+        <li><a href="blog.html">HER BLOG</a></li>
+        <li><a href="#contact">CONTACT HER</a></li>
+    </ul>
+</nav>
+
 <section id="about">
   <h2>ABOUT SAMANTHA TOEMAN</h2>
   <p>she is so cool....</p>
 </section>
-    
-  <nav>
-    <ul>
-        <li><a href="index.html">home</a></li>
-        <li><a href="work.html">HER WORK</a></li>
-        <li><a href="blog.html">HER BLOG</a></li>
-    </ul>
-</nav>
-
-
 
 <section id="contact">
   <h2>HOW TO CONTACT SAMANTHA TOEMAN</h2>
