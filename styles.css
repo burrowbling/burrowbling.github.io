@@ -1,23 +1,24 @@
 body {
-    font-family: Helvetica, serif;
+    font-family: Times New Roman, serif;
     max-width: 800px;
     margin: auto;
     padding: 20px;
-    background-color: #D8D3C9;
+    background-color: #FFFFFF;
 }
 
 header {
+    font-family: Helvetica, serif;
     text-align: center;
-    background: #D8D3C9;
-    color: #2C442D;
+    background: #FFFFFF;
+    color: #66271b;
     padding: 20px;
 }
 
 section {
     margin-top: 30px;
     padding: 20px;
-    background: #D8D3C9;
-    color: #2C442D;
+    background: #FFFFFF;
+    color: #66271b;
     border-radius: 10px;
     
 }
@@ -36,7 +37,7 @@ nav li {
 
 nav a {
     text-decoration: none;  /* removes underline */
-    color: #2C442D;         /* keeps text color consistent with surrounding */
+    color: #66271b;         /* keeps text color consistent with surrounding */
 }
 
 a {
