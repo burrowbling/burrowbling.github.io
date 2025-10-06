@@ -12,19 +12,20 @@
         <p> Rhode Island School Of Design 2029 </p>
     </header>
 
-  <nav>
-    <ul>
-        <li><a href="#about" onclick="showSection('about')">about</a></li>
-        <li><a href="#work" onclick="showSection('work')">work</a></li>
-        <li><a href="blog.html" onclick="showSection('blog')">blog</a></li>
-        <li><a href="#contact" onclick="showSection('contact')">contact</a></li>
-    </ul>
-</nav>
-
 <section id="about">
   <h2>ABOUT SAMANTHA TOEMAN</h2>
   <p>she is so cool....</p>
 </section>
+    
+  <nav>
+    <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="work.html">HER WORK</a></li>
+        <li><a href="blog.html">HER BLOG</a></li>
+    </ul>
+</nav>
+
+
 
 <section id="contact">
   <h2>HOW TO CONTACT SAMANTHA TOEMAN</h2>
@@ -32,16 +33,7 @@
   <p>or send carrier pigeon</p>
 </section>
     
-    <script>
-    function showSection(id) {
-      // Hide all sections
-      document.querySelectorAll("section").forEach(sec => {
-        sec.classList.remove("active");
-      });
-      // Show the chosen section
-      document.getElementById(id).classList.add("active");
-    }
-  </script>
+
     
 </body>
 </html>
