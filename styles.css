@@ -65,6 +65,14 @@ a {
     color: #2C442D;
 }
 
+
+img {
+  max-width: 100%;   /* never overflow the page */
+  height: auto;      /* keep proportions */
+  display: block;    /* removes weird spacing */
+  margin: 1rem 0;    /* space above/below */
+}
+
 section {
   display: none;
 }
