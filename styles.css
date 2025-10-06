@@ -46,6 +46,16 @@ nav ul {
     gap: 1rem;             /* optional: spacing between items */
 }
 
+ul {
+     color: #66271b;
+    list-style-type: none; /* removes bullet points */
+    padding: 0;            /* removes default padding */
+    margin: 0;             /* optional: removes default margin */
+    display: flex;         /* optional: displays items in a row */
+     text-align: center;
+    gap: 1rem;             /* optional: spacing between items */
+}
+
 nav li {
     /* optional styles */
 }
