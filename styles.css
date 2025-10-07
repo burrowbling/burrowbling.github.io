@@ -39,10 +39,11 @@ article {
 nav ul {
      color: #66271b;
     list-style-type: none; /* removes bullet points */
-    padding: 40px;            /* removes default padding */
+    padding: 0px;            /* removes default padding */
     margin: 0;             /* optional: removes default margin */
     display: flex;         /* optional: displays items in a row */
      text-align: center;
+      flex-wrap: wrap;
     gap: 1rem;             /* optional: spacing between items */
 }
 
