@@ -89,7 +89,6 @@ img {
 }
 
 .artwork {
-  max-width: 100%;   /* never overflow the page */
   height: 600px;   
   width: auto;/* keep proportions */
   display: block;    /* removes weird spacing */
