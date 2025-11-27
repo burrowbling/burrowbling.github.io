@@ -90,8 +90,8 @@ img {
 
 .artwork {
   max-width: 100%;   /* never overflow the page */
-    width: 800px;
-  height: auto;      /* keep proportions */
+  height: 600px;   
+  width: auto;/* keep proportions */
   display: block;    /* removes weird spacing */
   margin: 2rem 0;    /* space above/below */
 }
