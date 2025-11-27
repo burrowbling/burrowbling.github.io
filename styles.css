@@ -89,8 +89,9 @@ img {
 }
 
 .artwork {
-  height: 600px;   
-  width: auto;/* keep proportions */
+  width: 800px;   
+  height: auto;/* keep proportions */
+  max-height:100%;
   display: block;    /* removes weird spacing */
   margin: 2rem 0;    /* space above/below */
 }
