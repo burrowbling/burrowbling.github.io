@@ -16,12 +16,12 @@ function showSectionFromHash() {
   // Hide everything
   sections.forEach(sec => sec.classList.remove("active"));
 
-  // If hash matches a section ID, show it, otherwise show "about"
+  // If hash matches a section ID, show it, otherwise show "home"
   if (hash) {
     const target = document.getElementById(hash);
     if (target) target.classList.add("active");
   } else {
-    document.getElementById("about").classList.add("active");
+    document.getElementById("home").classList.add("active");
   }
 }
 
@@ -34,6 +34,7 @@ window.addEventListener("hashchange", showSectionFromHash);
     
   <nav>
     <ul>
+        <li><a href="#home">HOME</a></li>
         <li><a href="#about">ABOUT</a></li>
         <li><a href="#work">HER WORK</a></li>
         <li><a href="blog.html">HER BLOG</a></li>
@@ -41,9 +42,20 @@ window.addEventListener("hashchange", showSectionFromHash);
     </ul>
 </nav>
     
+<section id="home" class="active">
 
 
-<section id="about" class="active">
+<p></p>
+    <p></p>
+ <h2>IS RADIO MAGIC?</h2>
+<p></p>
+    <p></p>
+ </p>
+
+
+</section>
+
+<section id="about">
 
   <img src="../images/selfie_banner.png" alt="sam toeman">
 
