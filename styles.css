@@ -20,7 +20,7 @@ p {
 }
 
 header {
-    font-family: Helvetica, serif;
+    font-family: Helvetica, sans-serif;
     font-size: 48px;
     text-align: center;
     background: var(--bg);
