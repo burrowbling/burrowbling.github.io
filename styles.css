@@ -1,11 +1,12 @@
 /*bg = #D72424*/
 
 :root {
-  /*winter 2026 */
+  /*winter 2026 
   --text: #941414;
-  --bg: #E7D5BC;
-   /* fall 2025 --text: #66271b;
-  --bg: #d1ccd4; */
+  --bg: #E7D5BC;*/
+   /* fall 2025 */
+  --text: #66271b;
+  --bg: #d1ccd4; 
 }
 
 body {
