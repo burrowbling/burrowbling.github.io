@@ -1,12 +1,18 @@
+/*bg = #D72424*/
 
+:root {
+  --text: #66271b;
+  --bg: #d1ccd4;
+  
+}
 
 body {
     font-family: Times New Roman, serif;
     max-width: 800px;
     margin: auto;
     padding: 20px;
-    color: #66271b;
-    background-color: #d1ccd4;
+    color: var(--text);
+    background-color: var(--bg);
 }
 
 p {
@@ -17,29 +23,29 @@ header {
     font-family: Helvetica, serif;
     font-size: 48px;
     text-align: center;
-    background: #d1ccd4;
-    color: #66271b;
+    background: var(--bg);
+    color: var(--text);
     padding: 20px;
 }
 
 section {
     margin-top: 30px;
     padding: 20px;
-    background: #d1ccd4;
-    color: #66271b;
+    background: var(--bg);
+    color: var(--text);
     border-radius: 10px;
 }
 
 article {
     margin-top: 30px;
     padding: 20px;
-    background: #d1ccd4;
-    color: #66271b;
+    background: var(--bg);
+    color: var(--text);
     border-radius: 10px;
 }
 
 nav ul {
-     color: #66271b;
+     color: var(--text);
     list-style-type: none; /* removes bullet points */
     padding: 0px;            /* removes default padding */
     margin: 0;             /* optional: removes default margin */
@@ -50,7 +56,7 @@ nav ul {
 }
 
 ul {
-     color: #66271b;
+     color: var(--text);
     list-style-type: none; /* removes bullet points */
     padding: 0;            /* removes default padding */
     margin: 0;             /* optional: removes default margin */
@@ -68,11 +74,11 @@ nav a {
      text-align: center;
     margin-top: 30px;
     padding: 20px;
-    background: #d1ccd4;
-    color: #66271b;
+    background: var(--bg);
+    color: var(--text);
     border-radius: 10px;
     /*text-decoration: none;   removes underline */
-    color: #66271b;         /* keeps text color consistent with surrounding */
+    color: var(--text);      /* keeps text color consistent with surrounding */
 }
 
 a {
