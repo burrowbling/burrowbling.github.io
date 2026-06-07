@@ -3,10 +3,13 @@
 :root {
   /*winter 2026 
   --text: #941414;
-  --bg: #E7D5BC;*/
-   /* fall 2025 */
+  --bg: #E7D5BC;
+    fall 2025 
   --text: #66271b;
   --bg: #d1ccd4; 
+  */
+  text: #22222a;
+  bg: #f8fafa;
 }
 
 body {
