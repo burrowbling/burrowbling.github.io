@@ -10,24 +10,24 @@
 <style>
 
 :root {
-  text: #0b2033;
-  bg: #e1e6df;
-  highlight: #bdd13c;
+  --text: #0b2033;
+  --bg: #e1e6df;
+  --highlight: #bdd13c;
 }
 	
 body {
-  background-color: var(bg);
+  background-color: var(--bg);
 }
 
 h3 {
-  color: var(text);
+  color: var(--text);
   text-align: center;
   text-size:1px;
 }
 
 p {
   font-family: times;
-  color: var(text);
+  color: var(--text);
   text-align: justify;
   line-height: 0.9;
 
@@ -48,7 +48,7 @@ div {
   text-align:center;
   margin-right: 100px;
   margin-left: 100px;
-    background-color: var(bg);
+    background-color: var(--bg);
 }
 
 details { 
@@ -58,13 +58,13 @@ text-align:center;
 
 a {
 	text-decoration-line: underline;
-	color: var(text);
-	background-color: var(bg);
+	color: var(--text);
+	background-color: var(--bg);
 }
 
 /* mouse over link */
 a:hover {
-	background-color: var(highlight);
+	background-color: var(--highlight);
 }
 
 img {
