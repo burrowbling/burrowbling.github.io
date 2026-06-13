@@ -12,6 +12,7 @@
 :root {
   text: #0b2033;
   bg: #e1e6df;
+  highlight: #bdd13c;
 }
 	
 body {
@@ -56,13 +57,14 @@ text-align:center;
 
 
 a {
-	text-decoration-line: none;
+	text-decoration-line: underline;
 	color: var(text);
+	background-color: var(bg);
 }
 
 /* mouse over link */
 a:hover {
-  	text-decoration-line: underline;
+	background-color: var(highlight);
 }
 
 img {
