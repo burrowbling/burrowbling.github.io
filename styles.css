@@ -1,103 +1,91 @@
-/*bg = #D72424*/
+<style>
 
 :root {
-  /*winter 2026 
-  --text: #941414;
-  --bg: #E7D5BC;
-    fall 2025 
-  --text: #66271b;
-  --bg: #d1ccd4; 
-  */
-  text: #22222a;
-  bg: #f8fafa;
+  --text: #0b2033;
+  --bg: #e1e6df;
+  --highlight: #bdd13c;
 }
 
+::selection {
+  color: var(--text);
+  background: var(--highlight);
+}
+
+
+span {
+color: var(--text);
+  background: var(--highlight);
+}
+
+	
 body {
-    font-family: Times New Roman, serif;
-    max-width: 800px;
-    text-align: center;
-    padding: 20px;
-    color: var(--text);
-    background-color: var(--bg);
+  background-color: var(--bg);
+}
+
+h3 {
+  color: var(--text);
+  text-align: center;
+  text-size:1px;
 }
 
 p {
-    color: #66271b;
+  font-family: times;
+  color: var(--text);
+  text-align: justify;
+  line-height: 1.1;
+
+  margin-top: 50px;
+  margin-right: 150px;
+  margin-left: 150px;
+
 }
 
-header {
-    font-family: Helvetica, sans-serif;
-    font-size: 48px;
-    text-align: center;
-    background: var(--bg);
-    color: var(--text);
-    padding: 20px;
+.unlinked {
+
+color: #747171;
+
 }
 
-section {
-    margin-top: 30px;
-    padding: 20px;
-    background: var(--bg);
-    color: var(--text);
-    border-radius: 10px;
+div { 
+  border: 1px solid black;
+  text-align:center;
+  margin-right: 100px;
+  margin-left: 100px;
+    background-color: var(--bg);
 }
 
-article {
-    margin-top: 30px;
-    padding: 20px;
-    background: var(--bg);
-    color: var(--text);
-    border-radius: 10px;
+details { 
+text-align:center;
 }
 
-nav ul {
-     color: var(--text);
-    list-style-type: none; /* removes bullet points */
-    padding: 0px;            /* removes default padding */
-    margin: 0;             /* optional: removes default margin */
-    display: flex;         /* optional: displays items in a row */
-     text-align: center;
-      flex-wrap: wrap;
-    gap: 1rem;             /* optional: spacing between items */
-}
-
-ul {
-     color: var(--text);
-    list-style-type: none; /* removes bullet points */
-    padding: 0;            /* removes default padding */
-    margin: 0;             /* optional: removes default margin */
-    display: flex;         /* optional: displays items in a row */
-    flex-wrap: wrap;
-    text-align: center;
-    gap: 1rem;             /* optional: spacing between items */
-}
-
-nav li {
-    /* optional styles */
-}
-
-nav a {
-     text-align: center;
-    margin-top: 30px;
-    padding: 20px;
-    background: var(--bg);
-    color: var(--text);
-    border-radius: 10px;
-    /*text-decoration: none;   removes underline */
-    color: var(--text);      /* keeps text color consistent with surrounding */
-}
 
 a {
-    color: #2C442D;
+	text-decoration-line: underline;
+	color: var(--text);
+	background-color: var(--bg);
 }
 
+/* mouse over link */
+a:hover {
+	background-color: var(--highlight);
+}
 
 img {
-  max-width: 100%;   /* never overflow the page */
-    width: 400px;
-  height: auto;      /* keep proportions */
-  display: block;    /* removes weird spacing */
-  margin: 1rem 0;    /* space above/below */
+	
+  display: block;
+  margin: auto;
+  width: 40%;
+	margin-top: 100px;
+}
+
+footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: var(--text);
+   text-align: center;
+   letter-spacing: 3px;
 }
 
 .artwork {
