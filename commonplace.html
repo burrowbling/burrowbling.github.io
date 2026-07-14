@@ -1,0 +1,53 @@
+<head>
+	<title>Commonplace</title>
+</head>
+
+
+<body>
+
+<div id="heading"></div>
+<textarea id="note"></textarea>
+<button id="button">Append?</button>
+
+<div id="feed"></div>
+
+</body>
+
+<script>
+
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script>
+const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTmPJA2q3VJok32VvJbEjEN_VoymKj8wZGj8cdRI3Ws5VC_gH5xVFNy39vPfGcFm6FLqrbLSdpQZYI1/pubhtml";
+const WRITE_URL = "https://script.google.com/macros/s/AKfycbw4jJL3l3cZAwdZvq-JGubiwqw5SWC6yCvu4Oii1R48fVPo_LYhNzNoHubSA0x76jtrtg/exec";
+const SECRET = "Vega"; // must match the Apps Script
+
+function renderEntry(text) {
+  const p = document.createElement("p");
+  p.textContent = text; // textContent, not innerHTML — avoids anyone's sheet content injecting HTML/scripts
+  document.getElementById("feed").prepend(p);
+}
+
+async function loadEntries() {
+  const res = await fetch(SHEET_CSV_URL, { cache: "no-store" });
+  const csvText = await res.text();
+  const { data } = Papa.parse(csvText, { header: true, skipEmptyLines: true });
+  document.getElementById("feed").innerHTML = "";
+  data.reverse().forEach(row => renderEntry(row.Text || ""));
+}
+
+document.getElementById("button").addEventListener("click", async function () {
+  const text = document.getElementById("note").value.trim();
+  if (!text) return;
+
+  await fetch(WRITE_URL, {
+    method: "POST",
+    body: new URLSearchParams({ text, secret: SECRET }) // form-encoded avoids CORS preflight issues with Apps Script
+  });
+
+  renderEntry(text); // optimistic update — shows immediately, no need to wait for a refetch
+  document.getElementById("note").value = "";
+});
+
+loadEntries();
+
+</script>
