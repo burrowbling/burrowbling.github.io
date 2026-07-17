@@ -2,10 +2,6 @@
 	<title>Commonplace</title>
 </head>
 
-<style>
-
-	body:
-</style>
 <body>
 <div id="heading"></div>
 <textarea id="note"></textarea>
@@ -13,53 +9,42 @@
 
 <div id="feed"></div>
 
-</body>
-
-
-
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 <script>
 const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTmPJA2q3VJok32VvJbEjEN_VoymKj8wZGj8cdRI3Ws5VC_gH5xVFNy39vPfGcFm6FLqrbLSdpQZYI1/pub?output=csv";
 const WRITE_URL = "https://script.google.com/macros/s/AKfycbxLDRAGKDegg-StUChDc_G_WLdG7gPeHZL7nKxOCse8mWH9w_ZFWyCFI2eiQoMxwroz-A/exec";
-const SECRET = "Vega"; // must match the Apps Script
+const SECRET = "Vega";
 
 function renderEntry(text) {
 	const p = document.createElement("p");
 	p.textContent = text;
 	document.getElementById("feed").prepend(p);
 }
-	async function loadEntries() {
-		const res = await fetch(SHEET_CSV_URL + "&_=" + Date.now(), { cache: "no-store" });
-		const csvText = await res.text();
-		const { data } = Papa.parse(csvText, { header: true, skipEmptyLines: true });
-		document.getElementById("feed").innerHTML = "";
-		data.forEach(row => renderEntry(row.note || ""));
-	}
+
+async function loadEntries() {
+	const res = await fetch(SHEET_CSV_URL + "&_=" + Date.now(), { cache: "no-store" });
+	const csvText = await res.text();
+	const { data } = Papa.parse(csvText, { header: true, skipEmptyLines: true });
+	document.getElementById("feed").innerHTML = "";
+	data.forEach(row => renderEntry(row.text || ""));
+}
 
 document.getElementById("button").addEventListener("click", async function () {
 	const text = document.getElementById("note").value.trim();
 	if (!text) return;
 
-await fetch(WRITE_URL, {
-	method: "POST",
-	body: new URLSearchParams({ text, secret: SECRET })
-});
-
-	renderEntry(text);
-	document.getElementById("text").value = "";
+	await fetch(WRITE_URL, {
+		method: "POST",
+		body: new URLSearchParams({ text, secret: SECRET })
 	});
 
-	loadEntries();
+	renderEntry(text);
+	document.getElementById("note").value = "";
+});
+
+loadEntries();
 </script>
 
-
-
-
-
-
-
-
-
-
+</body>
 
 		
