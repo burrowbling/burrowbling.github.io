@@ -33,7 +33,7 @@ function renderEntry(text) {
 		const csvText = await res.text();
 		const { data } = Papa.parse(csvText; { header: true, skipEmptyLines: true });
 		document.getElementById("feed").innerHTML = "";
-		data.forEach(row => renderEntry(row.note || ""));
+		data.forEach(row => renderEntry(row.text || ""));
 	}
 
 document.getElementById("button").addEventListener("click", async function () {
