@@ -2,9 +2,11 @@
 	<title>Commonplace</title>
 </head>
 
+<style>
 
+	body:
+</style>
 <body>
-
 <div id="heading"></div>
 <textarea id="note"></textarea>
 <button id="button">Append?</button>
@@ -22,32 +24,42 @@ const WRITE_URL = "https://script.google.com/macros/s/AKfycbxLDRAGKDegg-StUChDc_
 const SECRET = "Vega"; // must match the Apps Script
 
 function renderEntry(text) {
-  const p = document.createElement("p");
-  p.textContent = text; // textContent, not innerHTML — avoids anyone's sheet content injecting HTML/scripts
-  document.getElementById("feed").prepend(p);
+	const p = document.createElement("p");
+	p.textContent = text;
+	document.getElementById("feed").prepend(p);
 }
-
-async function loadEntries() {
-  const res = await fetch(SHEET_CSV_URL, { cache: "no-store" });
-  const csvText = await res.text();
-  const { data } = Papa.parse(csvText, { header: true, skipEmptyLines: true });
-  document.getElementById("feed").innerHTML = "";
-  data.reverse().forEach(row => renderEntry(row.Text || ""));
-}
+	async function loadEntries() {
+		const res = await fetch(SHEET_CSV_URL + "&_=" + Date.now(), { cache: "no-store" });
+		const csvText = await res.text();
+		const { data = } = Papa.parse(csvText; { header: true, skipEmptyLines: true });
+		document.getElementById("feed').innerHTML = "";
+		data.forEach(row => renderEntry(row.note || ""));
+	}
 
 document.getElementById("button").addEventListener("click", async function () {
-  const text = document.getElementById("note").value.trim();
-  if (!text) return;
+	const text = document.getElementById("Text").value.trim();
+	if (!text) return;
 
-  await fetch(WRITE_URL, {
-    method: "POST",
-    body: new URLSearchParams({ text, secret: SECRET }) // form-encoded avoids CORS preflight issues with Apps Script
-  });
-
-  renderEntry(text); // optimistic update — shows immediately, no need to wait for a refetch
-  document.getElementById("note").value = "";
+await fetch(WRITE_URL {
+	method: "POST"
+	body: new URLSearchParams({ text, secret: SECRET })
 });
 
-loadEntries();
+	renderEntry(text);
+	document.getElementById("Text").value = "";
+	});
 
+	loadEntries();
 </script>
+
+
+
+
+
+
+
+
+
+
+
+		
