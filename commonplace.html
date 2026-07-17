@@ -15,7 +15,7 @@
 
 </body>
 
-<script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 <script>
@@ -31,22 +31,22 @@ function renderEntry(text) {
 	async function loadEntries() {
 		const res = await fetch(SHEET_CSV_URL + "&_=" + Date.now(), { cache: "no-store" });
 		const csvText = await res.text();
-		const { data = } = Papa.parse(csvText; { header: true, skipEmptyLines: true });
-		document.getElementById("feed').innerHTML = "";
+		const { data } = Papa.parse(csvText; { header: true, skipEmptyLines: true });
+		document.getElementById("feed").innerHTML = "";
 		data.forEach(row => renderEntry(row.note || ""));
 	}
 
 document.getElementById("button").addEventListener("click", async function () {
-	const text = document.getElementById("Text").value.trim();
+	const text = document.getElementById("text").value.trim();
 	if (!text) return;
 
-await fetch(WRITE_URL {
-	method: "POST"
+await fetch(WRITE_URL, {
+	method: "POST",
 	body: new URLSearchParams({ text, secret: SECRET })
 });
 
 	renderEntry(text);
-	document.getElementById("Text").value = "";
+	document.getElementById("text").value = "";
 	});
 
 	loadEntries();
