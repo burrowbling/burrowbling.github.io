@@ -12,12 +12,20 @@
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 <script>
 const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTmPJA2q3VJok32VvJbEjEN_VoymKj8wZGj8cdRI3Ws5VC_gH5xVFNy39vPfGcFm6FLqrbLSdpQZYI1/pub?output=csv";
-const WRITE_URL = "https://script.google.com/macros/s/AKfycbxLDRAGKDegg-StUChDc_G_WLdG7gPeHZL7nKxOCse8mWH9w_ZFWyCFI2eiQoMxwroz-A/exec";
+const WRITE_URL = "https://script.google.com/macros/s/AKfycbzPXZTq7HYZ8lF20tObKuD9GbXBHA_DOGnPACHSi63k2_9R1HwqRoJ9IFW45OOx_Qbbgg/exec";
 const SECRET = "Vega";
 
-function renderEntry(text) {
+function renderEntry(text, date) {
 	const p = document.createElement("p");
-	p.textContent = text;
+	
+	let displayText;
+	if (date) {
+		displayText = date + " - " + text;
+	} else { 
+		displayText = text;
+	}
+	p.textContent = displayText;
+	
 	document.getElementById("feed").prepend(p);
 }
 
@@ -26,7 +34,7 @@ async function loadEntries() {
 	const csvText = await res.text();
 	const { data } = Papa.parse(csvText, { header: true, skipEmptyLines: true });
 	document.getElementById("feed").innerHTML = "";
-	data.forEach(row => renderEntry(row.text || ""));
+	data.forEach(row => renderEntry(row.text || "", row.date || ""));
 }
 
 document.getElementById("button").addEventListener("click", async function () {
