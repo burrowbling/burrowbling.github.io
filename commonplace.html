@@ -17,6 +17,9 @@
 	text-align: center;
 	}
 
+	timestamp {
+	font-variant-caps: small-caps;
+	}
 	
 </style>
 
@@ -40,7 +43,7 @@ function renderEntry(text, date) {
 	
 	let displayText;
 	if (date) {
-		displayText = date + " - " + text;
+		displayText = text + " - " + date;
 	} else { 
 		displayText = text;
 	}
