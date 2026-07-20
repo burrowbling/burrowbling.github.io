@@ -1,14 +1,21 @@
 <head>
 	<title>Commonplace</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+	
 </head>
 
 <body>
-<div id="heading"></div>
+<div id="heading">COMMONPLACE</div>
 <textarea id="note"></textarea>
 <button id="button">Append?</button>
 
 <div id="feed"></div>
 
+</body>
+	
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 <script>
 const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTmPJA2q3VJok32VvJbEjEN_VoymKj8wZGj8cdRI3Ws5VC_gH5xVFNy39vPfGcFm6FLqrbLSdpQZYI1/pub?output=csv";
@@ -53,6 +60,6 @@ document.getElementById("button").addEventListener("click", async function () {
 loadEntries();
 </script>
 
-</body>
+
 
 		
