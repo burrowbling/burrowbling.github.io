@@ -122,7 +122,7 @@ const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTmPJA2q3
 const WRITE_URL = "https://script.google.com/macros/s/AKfycbzPXZTq7HYZ8lF20tObKuD9GbXBHA_DOGnPACHSi63k2_9R1HwqRoJ9IFW45OOx_Qbbgg/exec";
 const SECRET = "Vega";
 
-function renderEntry(text, date) {
+function renderEntry(text, date, showDate) {
 	<!-- adds the body of the note -->
 	const p = document.createElement("p");
 	p.innerHTML = displayText;
