@@ -125,7 +125,7 @@ const SECRET = "Vega";
 function renderEntry(text, date, showDate) {
 	<!-- adds the body of the note -->
 	const p = document.createElement("p");
-	p.innerHTML = displayText;
+	p.innerHTML = text;
 	document.getElementById("feed").prepend(p);
 
 	if (showDate) {
@@ -144,7 +144,7 @@ async function loadEntries() {
 	data.forEach((row,index) => {
 		const date = row.date || "";
 		const nextPost = data[index + 1];
-		const isLatest = !nextRow;
+		const isLatest = !nextPost;
 		const nextPostOnSameDay = nextPost && nextPost.date === date;
 		const showDate = date && (isLatest || !nextPostOnSameDay);
 
