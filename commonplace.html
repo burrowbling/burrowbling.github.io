@@ -117,17 +117,16 @@ const WRITE_URL = "https://script.google.com/macros/s/AKfycbzPXZTq7HYZ8lF20tObKu
 const SECRET = "Vega";
 
 function renderEntry(text, date) {
+	<!-- adds the body of the note -->
 	const p = document.createElement("p");
-	
-	let displayText;
-	if (date) {
-		displayText = text + "<br><timestamp>" + date + "</timestamp>";
-	} else { 
-		displayText = text;
-	}
 	p.innerHTML = displayText;
-	
 	document.getElementById("feed").prepend(p);
+
+	if (showDate) {
+		const dateInfo = document.createElement("timestamp");
+		dateInfo.textContent = date;
+		document.getElementById("feed").prepend(dateInfo);
+	}
 }
 
 async function loadEntries() {
@@ -135,7 +134,16 @@ async function loadEntries() {
 	const csvText = await res.text();
 	const { data } = Papa.parse(csvText, { header: true, skipEmptyLines: true });
 	document.getElementById("feed").innerHTML = "";
-	data.forEach(row => renderEntry(row.text || "", row.date || ""));
+	
+	data.forEach((row,index) => {
+		const date = row.date || "";
+		const nextPost = data[index + 1];
+		const isLatest = !nextRow;
+		const nextPostOnSameDay = nextPost && nextPost.date === date;
+		const showDate = date && (isLatest || !nextPostOnSameDay);
+
+		renderEntry(row.text || "", date, showDate);
+	});
 }
 
 document.getElementById("button").addEventListener("click", async function () {
