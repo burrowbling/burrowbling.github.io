@@ -4,6 +4,7 @@
   --text: #0b2033;
   --bg: #e1e6df;
   --highlight: #bdd13c;
+  --faint: #6e7881;
 }
 
 ::selection {
@@ -35,8 +36,8 @@ p {
   line-height: 1.1;
 
   margin-top: 50px;
-  margin-right: 150px;
-  margin-left: 150px;
+  margin-right: 20%;
+  margin-left: 20%;
 
 }
 
@@ -82,27 +83,10 @@ footer {
    position: fixed;
    left: 0;
    bottom: 0;
+   margin-bottom: 10px;
    width: 100%;
-   color: var(--text);
+   color: var(--faint);   
    text-align: center;
-   letter-spacing: 3px;
 }
 
-.artwork {
-  width: 800px;   
-  height: auto;/* keep proportions */
-  max-height:100%;
-  display: block;    /* removes weird spacing */
-  margin: 2rem 0;    /* space above/below */
-}
-
-
-section {
-  display: none;
-}
-
-section.active {
-  display: block;
-}
-
-
+<style>
