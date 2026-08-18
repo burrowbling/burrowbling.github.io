@@ -11,15 +11,30 @@
 	<link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   </head>
   <style>
+	:root {
+  	--text: #0b2033;
+  	--bg: #e1e6df;
+  	--highlight: #bdd13c;
+  	--faint: #6e7881;
+	}
+
+	::selection {
+ 	 color: var(--text);
+ 	 background: var(--highlight);
+	}
+
+
 
     body {
 	  padding: 100px;
       align: center;
       margin:auto;
 	  max-width : 80%;
-	  font-weight: 400;
+	  font-weight: 500;
 	  font-family: "Baskervville", serif;    
-	  letter-spacing: 0px;
+	  letter-spacing: -0.5px;
+      color: var(--text);
+      background-color: var(--bg);
 	}
 
     p {
@@ -29,14 +44,33 @@
 
 	h3 {
 		font-family: Helvetica;
-		padding: 50px 0px;
+		padding: 0px 0px 0px 0px;
 	}
 
 	.sticker {
-		border: 1px dashed black;
+		border: 1px solid black;
 		border-radius: 50%;
-		padding: 8px;
+        background-color: white;
+		padding: 10px 16px;
+        display: block;
+        margin: 40px 0px 50px 0px;
+        max-width: 25%;
+        text-align:center;
+        font-style: italic;
+
 	}
+    
+    a {
+	text-decoration-line: underline;
+	color: var(--text);
+	background-color: var(--bg);
+}
+
+/* mouse over link */
+a:hover {
+	background-color: var(--highlight);
+}
+
     
   </style>
   <body>
