@@ -12,59 +12,194 @@
 
     
     <style>
-body {
-	color: #051b55;
-text-align: center;
-background-color: #e6dcdf;
-font-family: "EB Garamond", sans-serif;
-max-width: 400px;
-margin: auto;
+
+:root { 
+--text: black;
+--bg: #a7bee8;
+--highlight: #faf9f2;
 }
 
-h1{
-  margin-top: 200px;
+body { 
+background-color: var(--bg);
 }
 
-details{
-  text-align:center;
+* {
+  box-sizing: border-box;
+
 }
 
-a {
-  color: #eb2d88;
+h1 {
+padding: 20px;
 }
 
 div {
-  border: 0px solid #4260ac;
-  border-radius: 2px;
-  margin: auto;
-  width: 40%;
-  padding: 8px;
+border: 1px solid black;
+padding: 20px;
+
 }
+
 img {
-width: 40%;
-	height: auto;
+height: 200px;
+width: auto;
+border-radius: 10px;
+border: 1px solid var(--text);
+filter: brightness(120%) contrast(80%);
+
 }
+
+.container {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-rows: 100px 400px;
+
+
+grid-template-areas: 
+'nexttime nexttime nexttime nexttime'
+'faq faq past past';
+
+
+gap: 20px;
+
+}
+
+.container div {
+border-radius: 10px;
+}
+
+.info {
+grid-area: info;
+}
+
+.nexttime {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-rows: 100px;
+padding: 0;
+grid-area: nexttime;
+}
+
+.nexttime div {
+margin: auto;
+}
+
+.nextinfo, .heading {
+font-size: 24px;
+}
+
+.faq {
+grid-area: faq;
+}
+.past {
+grid-area: past;
+}
+
+a {
+background-color: var(--highlight);
+color: var(--bg);
+}
+
+
+
 
     </style>
+
+
+
   </head>
   <body>
-    <br><br><i>Please join us for Another</i>
+    <h1>Online Show And Tell</h1>
+<marquee scrollamount="8" scrolldelay="60" truespeed="true">
+<i>A biweekly event hosted on Zoom.</i>
 
-    <h1><img src="showandtelllogo.png" alt="Online<br>Show & Tell"></h1>
+<img src="04_group.jpeg">
+<img src="04_willow.jpeg">
+<img src="04_kaia.jpeg">
+<img src="04_carlos.jpeg">
 
-    <br><br><i>is returning this Sunday.</i>
-    <br><br>October 4th, 2026
-    <br> 8:00-8:40 PM EST
-    <br><br> <div><a href=https://calendar.app.google/THESjRbedtCfg9mF6><b>**RSVP for zoom link**</b></a></div>
+</marquee>
+
+
+   
 
     </p>
-  
-    <details><summary><i>what do i bring?</i></summary><br>
-      You should bring something of importance to you.<i><br><br>Try not to bring something you made.</i> <br><br>You can bring an artwork, image, short video or audio piece, or poem. Or, you can bring a physical object, like a rock, bowl, or sculpture. If you want, you can even show a dance or another cool trick/skill.<br><br>
+
+<div class="container">
+
+
+
+<div class="nexttime">
+	
+	
+	<div class="heading">
+	<i>Next Event:</i>
+	</div>
+
+	<div class="nextinfo">
+ 	November 8th, 2026
+	    <br> 8:00-8:40 PM EST
+	</div>
+
+	<div class="countdown">
+	<p id="countdown"></p>
+	</div>
+
+	<div class="link">
+	<a href=https://calendar.app.google/N5pbmPE2zZ8XZZXF6><b>**Sign up with Google Calendar**</b></a>
+	</div>
+
+</div>
+
+
+<div class="faq">
+
+<details><summary><i>what do i bring?</i></summary><br>
+      You should bring something of importance to you.<i><br>Try not to bring something you 		made.</i> <br>You can bring an artwork, image, short video or audio piece, or poem. Or, 	you can bring a physical object, like a rock, bowl, or sculpture. If you want, you can 	even show a dance or another cool trick/skill.<br><br>
     </details>
   
     <details><summary><i>what is a "show and tell?"</i></summary><br>
-    <a>https://en.wikipedia.org/wiki/Show_and_tell</a><br><br>
-    </details>
-  </body>
+    	<a>https://en.wikipedia.org/wiki/Show_and_tell</a><br><br>
+   	 </details> 
+
+</div>
+
+	<div class="past"
+<p>archive</p>
+<details><summary>10.18</summary>
+<br>
+Amanda brought a photo.<br>
+Carlos brought rocks.<br>
+Willow brought a camera crew.<br>
+Eli brought a shoe.<br>
+Mina brought a Sting mug.<br>
+Marlo brought a window.<br>
+Samantha brought a Wikipedia page.<br>
+Gabbi brought a 
+</details>
+</p>
+	</div>
+</div>
+
+  
+
+<script>
+
+var nextShowAndTell = new Date("Nov 8, 2026, 20:00:00 GMT-0500").getTime();
+
+var x = setInterval(function() {
+
+	var now = new Date().getTime();
+	var distance = nextShowAndTell - now;
+
+	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+	document.getElementById("countdown").innerHTML = "in " + days + " days, " + hours + " hours, " + minutes + " minutes and " + seconds + " seconds."
+
+}, 1000);
+</script>
+
+</body>
 </html>
+
