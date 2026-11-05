@@ -14,8 +14,8 @@
     <style>
 
 :root { 
---text: black;
---bg: #a7bee8;
+--text: darkblue;
+--bg: #white;
 --highlight: #faf9f2;
 }
 
@@ -26,6 +26,7 @@
 
 
 body { 
+font-family: "EB Garamond", Times;
 background-color: var(--bg);
 }
 
@@ -36,7 +37,7 @@ background-color: var(--bg);
 
 h1 {
 padding: 20px 20px 0px 20px;
-font-size: 40px;
+font-size: 42px;
 font-family: Helvetica;
 letter-spacing: 20px;
 text-align: left;
@@ -55,7 +56,7 @@ filter: brightness(120%) contrast(80%);
 .container {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-grid-template-rows: 300px;
+grid-template-rows: 270px;
 gap: 20px;
 padding: 0px 20px 20px 20px;
 
@@ -76,42 +77,66 @@ display: grid;
 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 gap: 20px;
 padding: 0px 20px 20px 20px;
+  justify-content: space-between;
 
 }
 
 .nexttime div {
-border: 1px solid black;
 display: flex;
-padding: 20px;
- justify-content: center;
- align-items: center;
+padding: 20px 0px;
+font-size: 25px;
+
 
 }
 
 .headerinfo {
-display:grid;
+
+display: grid;
 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-align-content: space-between;
+gap: 20px;
 padding: 0px 20px 20px 20px;
+  justify-content: space-between;
+
 }
 
+.headerinfo div {
+display: flex;
+font-size: 18px;
+
+
+}
 .countdown {
 text-align: right;
 }
 
 
 .heading {
-font-size: 25px;
 padding: 20px;
+
+
+}
+
+.link {
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+border: 2px dashed var(--text);
+border-radius: 50%;
+background-color: var(--highlight);
+
 }
 
 
 a {
 
-background-color: var(--highlight);
+background-color: var(--bg);
 color: var(--text);
 }
 
+a:hover {
+	background-color: var(--highlight);
+}
 
 
 
@@ -123,11 +148,14 @@ color: var(--text);
   <body>
     <h1>Online Show & Tell</h1>
 <div class="headerinfo">
-<div><i>A forty minute long biweekly event hosted on Zoom. </div>
+<div><i>A forty minute biweekly event on Zoom. </div>
 <div class="countdown"></i><i id="countdown"></i> </div>
 </div>
 
 <marquee scrollamount="8" scrolldelay="60" truespeed="true">
+<i style="display: flex;
+align-items: center;
+justify-content: center;">Gallery:</i>
 <img src="images/04_group.jpeg">
 <img src="images/04_willow.jpeg">
 <img src="images/03_marlo.jpeg">
@@ -156,7 +184,7 @@ color: var(--text);
 	</div>
 
 	<div class="link">
-	<a href=https://calendar.app.google/N5pbmPE2zZ8XZZXF6><b>**Sign up with Google Calendar**</b></a>
+	<i>To join, <a href=https://calendar.app.google/N5pbmPE2zZ8XZZXF6 style="background-color: var(--highlight);">RSVP</a> on Google Calendar</i>
 	</div>
 
 </div>
