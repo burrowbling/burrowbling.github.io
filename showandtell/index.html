@@ -19,6 +19,12 @@
 --highlight: #faf9f2;
 }
 
+::selection {
+  color: var(--text);
+  background: var(--highlight);
+}
+
+
 body { 
 background-color: var(--bg);
 }
@@ -29,14 +35,13 @@ background-color: var(--bg);
 }
 
 h1 {
-padding: 20px;
+padding: 20px 20px 0px 20px;
+font-size: 40px;
+font-family: Helvetica;
+letter-spacing: 20px;
+text-align: left;
 }
 
-div {
-border: 1px solid black;
-padding: 20px;
-
-}
 
 img {
 height: 200px;
@@ -49,53 +54,62 @@ filter: brightness(120%) contrast(80%);
 
 .container {
 display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
-grid-template-rows: 100px 400px;
-
-
-grid-template-areas: 
-'nexttime nexttime nexttime nexttime'
-'faq faq past past';
-
-
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+grid-template-rows: 300px;
 gap: 20px;
+padding: 0px 20px 20px 20px;
+
 
 }
 
+
 .container div {
+border: 1px solid black;
+padding: 20px;
 border-radius: 10px;
 }
 
-.info {
-grid-area: info;
-}
 
 .nexttime {
+
 display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
-grid-template-rows: 100px;
-padding: 0;
-grid-area: nexttime;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 20px;
+padding: 0px 20px 20px 20px;
+
 }
 
 .nexttime div {
-margin: auto;
+border: 1px solid black;
+display: flex;
+padding: 20px;
+ justify-content: center;
+ align-items: center;
+
 }
 
-.nextinfo, .heading {
-font-size: 24px;
+.headerinfo {
+display:grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+align-content: space-between;
+padding: 0px 20px 20px 20px;
 }
 
-.faq {
-grid-area: faq;
+.countdown {
+text-align: right;
 }
-.past {
-grid-area: past;
+
+
+.heading {
+font-size: 25px;
+padding: 20px;
 }
+
 
 a {
+
 background-color: var(--highlight);
-color: var(--bg);
+color: var(--text);
 }
 
 
@@ -107,14 +121,21 @@ color: var(--bg);
 
   </head>
   <body>
-    <h1>Online Show And Tell</h1>
-<marquee scrollamount="8" scrolldelay="60" truespeed="true">
-<i>A biweekly event hosted on Zoom.</i>
+    <h1>Online Show & Tell</h1>
+<div class="headerinfo">
+<div><i>A forty minute long biweekly event hosted on Zoom. </div>
+<div class="countdown"></i><i id="countdown"></i> </div>
+</div>
 
+<marquee scrollamount="8" scrolldelay="60" truespeed="true">
 <img src="images/04_group.jpeg">
 <img src="images/04_willow.jpeg">
+<img src="images/03_marlo.jpeg">
+<img src="images/04_amanda.jpeg">
 <img src="images/04_kaia.jpeg">
+<img src="images/03_group.jpeg">
 <img src="images/04_carlos.jpeg">
+<img src="images/03_amanda.jpeg">
 
 </marquee>
 
@@ -123,7 +144,6 @@ color: var(--bg);
 
     </p>
 
-<div class="container">
 
 
 
@@ -131,16 +151,8 @@ color: var(--bg);
 	
 	
 	<div class="heading">
-	<i>Next Event:</i>
-	</div>
-
-	<div class="nextinfo">
- 	November 8th, 2026
-	    <br> 8:00-8:40 PM EST
-	</div>
-
-	<div class="countdown">
-	<p id="countdown"></p>
+	<i style="padding-right:10px">Next Time: </i> November 8th, 2026 at
+	 8:00-8:40 PM EST
 	</div>
 
 	<div class="link">
@@ -150,7 +162,9 @@ color: var(--bg);
 </div>
 
 
-<div class="faq">
+<div class="container">
+
+	<div class="faq">
 
 <details><summary><i>what do i bring?</i></summary><br>
       You should bring something of importance to you.<i><br>Try not to bring something you 		made.</i> <br>You can bring an artwork, image, short video or audio piece, or poem. Or, 	you can bring a physical object, like a rock, bowl, or sculpture. If you want, you can 	even show a dance or another cool trick/skill.<br><br>
@@ -160,7 +174,7 @@ color: var(--bg);
     	<a>https://en.wikipedia.org/wiki/Show_and_tell</a><br><br>
    	 </details> 
 
-</div>
+	</div>
 
 	<div class="past"
 <p>archive</p>
@@ -177,6 +191,7 @@ Gabbi brought a
 </details>
 </p>
 	</div>
+
 </div>
 
   
@@ -195,7 +210,7 @@ var x = setInterval(function() {
 	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-	document.getElementById("countdown").innerHTML = "in " + days + " days, " + hours + " hours, " + minutes + " minutes and " + seconds + " seconds."
+	document.getElementById("countdown").innerHTML = "Join us for another in: " + days + " days, " + hours + " hours, " + minutes + " minutes and " + seconds + " seconds."
 
 }, 1000);
 </script>
