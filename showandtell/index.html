@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -14,9 +14,10 @@
     <style>
 
 :root { 
---text: darkblue;
---bg: #white;
---highlight: #faf9f2;
+--text: #002a33;
+--bg: #eeeeee;
+--highlight: #cccf82;
+--altbg: #faf9f2;
 }
 
 ::selection {
@@ -28,6 +29,8 @@
 body { 
 font-family: "EB Garamond", Times;
 background-color: var(--bg);
+color: var(--text);
+
 }
 
 * {
@@ -65,7 +68,7 @@ padding: 0px 20px 20px 20px;
 
 
 .container div {
-border: 1px solid black;
+border: 1px solid var(--text);
 padding: 20px;
 border-radius: 10px;
 }
@@ -123,7 +126,7 @@ justify-content: center;
 text-align: center;
 border: 2px dashed var(--text);
 border-radius: 50%;
-background-color: var(--highlight);
+background-color: var(--altbg);
 
 }
 
@@ -153,9 +156,7 @@ a:hover {
 </div>
 
 <marquee scrollamount="8" scrolldelay="60" truespeed="true">
-<i style="display: flex;
-align-items: center;
-justify-content: center;">Gallery:</i>
+<p style="display:inline;" style="margin-bottom:50px;"><i>Gallery:</i></p>
 <img src="images/04_group.jpeg">
 <img src="images/04_willow.jpeg">
 <img src="images/03_marlo.jpeg">
@@ -245,4 +246,3 @@ var x = setInterval(function() {
 
 </body>
 </html>
-
