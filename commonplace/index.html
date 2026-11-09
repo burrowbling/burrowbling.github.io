@@ -122,6 +122,15 @@ const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTmPJA2q3
 const WRITE_URL = "https://script.google.com/macros/s/AKfycbzPXZTq7HYZ8lF20tObKuD9GbXBHA_DOGnPACHSi63k2_9R1HwqRoJ9IFW45OOx_Qbbgg/exec";
 const SECRET = "Vega";
 
+function formatDate(date) {
+	const d = new Date(date + "T12:00:00");
+
+	return d.toLocaleDateString("en-US", {
+		day: "numeric",
+		month: "long"
+	});
+}
+
 function renderEntry(text, date, showDate) {
 	<!-- adds the body of the note -->
 	const p = document.createElement("p");
@@ -130,7 +139,7 @@ function renderEntry(text, date, showDate) {
 
 	if (showDate) {
 		const dateInfo = document.createElement("timestamp");
-		dateInfo.textContent = date;
+		dateInfo.textContent = formatDate(date);
 		document.getElementById("feed").prepend(dateInfo);
 	}
 }
@@ -151,6 +160,7 @@ async function loadEntries() {
 		renderEntry(row.text || "", date, showDate);
 	});
 }
+
 
 document.getElementById("button").addEventListener("click", async function () {
 	const text = document.getElementById("note").value.trim();
